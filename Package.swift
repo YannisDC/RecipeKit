@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "RecipeKit",
     platforms: [
-        .iOS(.v17),
+        .iOS(.v13),
         .macOS(.v14)
     ],
     products: [
