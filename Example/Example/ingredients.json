@@ -1,0 +1,16 @@
+{
+  "ingredients": [
+    {
+      "name": "Carrot",
+      "dietaryRestrictions": ["vegan", "glutenFree", "vegetarian"],
+      "allergens": [],
+      "flavorProfile": ["sweet"]
+    },
+    {
+      "name": "Onion",
+      "dietaryRestrictions": ["vegan", "vegetarian", "glutenFree"],
+      "allergens": [],
+      "flavorProfile": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "recipes": [
+    {
+      "id": "UUID-string",
+      "name": "Carrot Soup",
+      "description": "A simple carrot soup",
+      "ingredients": ["ref:ingredients/carrot", "ref:ingredients/onion"],
+      "instructions": ["Sauté onions", "Add carrots and cook until tender"],
+      "techniques": ["saute"],
+      "tastes": ["sweet"]
+    }
+  ]
+}
