@@ -49,6 +49,6 @@ Or in Xcode:
 
 ### Requirements
 
-- iOS 13.0+ / macOS 10.15+
-- Swift 5.5+
+- iOS 17.0+ / macOS 14.0+
+- Swift 5.10+
 - Xcode 13.0+
