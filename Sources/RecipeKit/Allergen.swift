@@ -8,10 +8,12 @@
 import Foundation
 
 // Implementing it like this instead of an enum so we can extend it
-
-@preconcurrency
-public struct Allergen: Hashable, Codable {
+public struct Allergen: Hashable, Codable, @unchecked Sendable {
     public let name: String
+
+    public init(name: String) {
+        self.name = name
+    }
 }
 
 extension Allergen {
@@ -29,21 +31,24 @@ extension Allergen {
     public static let sulphites = Allergen(name: "Sulphites")
     public static let lupin = Allergen(name: "Lupin")
     public static let molluscs = Allergen(name: "Molluscs")
-    
+}
+
+public struct BaseAllergens {
     public static let all: [Allergen] = [
-        gluten,
-        shellfish,
-        eggs,
-        fish,
-        peanuts,
-        soy,
-        dairy,
-        nuts,
-        celery,
-        mustard,
-        sesame,
-        sulphites,
-        lupin,
-        molluscs
+        Allergen.gluten,
+        Allergen.shellfish,
+        Allergen.eggs,
+        Allergen.fish,
+        Allergen.peanuts,
+        Allergen.soy,
+        Allergen.dairy,
+        Allergen.nuts,
+        Allergen.celery,
+        Allergen.mustard,
+        Allergen.sesame,
+        Allergen.sulphites,
+        Allergen.lupin,
+        Allergen.molluscs
     ]
 }
+

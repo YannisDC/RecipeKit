@@ -52,3 +52,7 @@ Or in Xcode:
 - iOS 17.0+ / macOS 14.0+
 - Swift 5.10+
 - Xcode 13.0+
+
+## TODO / Known issues
+
+- [ ] Currently we have the add dietary restrictions to the ingredient. We should try a Set based approach.

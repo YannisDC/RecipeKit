@@ -8,10 +8,12 @@
 import Foundation
 
 // Implementing it like this instead of an enum so we can extend it
-
-@preconcurrency
-public struct DietaryRestriction: Hashable, Codable {
+public struct DietaryRestriction: Hashable, Codable, @unchecked Sendable {
     public let name: String
+
+    public init(name: String) {
+        self.name = name
+    }
 }
 
 extension DietaryRestriction {
@@ -35,4 +37,27 @@ extension DietaryRestriction {
     public static let diabetic = DietaryRestriction(name: "diabetic")
     public static let lowSodium = DietaryRestriction(name: "lowSodium")
     public static let lowCalorie = DietaryRestriction(name: "lowCalorie")
+}
+
+public struct BaseDietaryRestrictions {
+    public static let all: [DietaryRestriction] = [
+        DietaryRestriction.vegan,
+        DietaryRestriction.vegetarian,
+        DietaryRestriction.glutenFree,
+        DietaryRestriction.keto,
+        DietaryRestriction.lowFODMAP,
+        DietaryRestriction.dairyFree,
+        DietaryRestriction.nutFree,
+        DietaryRestriction.pescatarian,
+        DietaryRestriction.halal,
+        DietaryRestriction.kosher,
+        DietaryRestriction.eggFree,
+        DietaryRestriction.soyFree,
+        DietaryRestriction.shellfish,
+        DietaryRestriction.paleo,
+        DietaryRestriction.whole30,
+        DietaryRestriction.diabetic,
+        DietaryRestriction.lowSodium,
+        DietaryRestriction.lowCalorie
+    ]
 }

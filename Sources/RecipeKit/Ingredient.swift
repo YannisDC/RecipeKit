@@ -7,8 +7,7 @@
 
 import Foundation
 
-@preconcurrency
-public struct Ingredient: Codable {
+public struct Ingredient: Hashable, Codable, @unchecked Sendable {
     public let name: String
     public let dietaryRestrictions: Set<DietaryRestriction>
     public let allergens: Set<Allergen>

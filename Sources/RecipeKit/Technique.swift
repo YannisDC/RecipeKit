@@ -8,10 +8,12 @@
 import Foundation
 
 // Implementing it like this instead of an enum so we can extend it
-
-@preconcurrency
-public struct Technique: Hashable, Codable {
+public struct Technique: Hashable, Codable, @unchecked Sendable {
     public let name: String
+
+    public init(name: String) {
+        self.name = name
+    }
 }
 
 extension Technique {

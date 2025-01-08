@@ -1,6 +1,6 @@
 import Foundation
 
-public struct UserDietaryPreferences {
+public struct UserDietaryPreferences: Codable {
     public var dietaryRestrictions: Set<DietaryRestriction>
     public var allergens: Set<Allergen>
     public var excludedIngredients: Set<String> // Store ingredient names that user wants to avoid

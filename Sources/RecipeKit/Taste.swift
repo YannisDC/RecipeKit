@@ -7,9 +7,12 @@
 
 import Foundation
 
-@preconcurrency
-public struct Taste: Hashable, Codable {
+public struct Taste: Hashable, Codable, @unchecked Sendable {
     public let name: String
+
+    public init(name: String) {
+        self.name = name
+    }
 }
 
 extension Taste {
